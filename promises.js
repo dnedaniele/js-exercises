@@ -19,7 +19,7 @@ function createPost(post) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       posts.push(post);
-      const error = false; // here you can change the error T/F
+      const error = true; // here you can change the error T/F
 
       if (!error) {
         resolve();
@@ -32,3 +32,4 @@ function createPost(post) {
 
 createPost({title: 'Post Three'})// here you can adjust the order of the function execution 
 .then(getPost)    // create first and then render the post on the DOM 
+.catch(err=> console.log(err)); 
